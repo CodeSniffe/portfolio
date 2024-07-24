@@ -1,4 +1,3 @@
-// Icons.tsx
 import React from "react";
 
 interface IconProps {
