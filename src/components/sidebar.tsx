@@ -21,7 +21,6 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Mobile Sidebar */}
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="md:hidden">
@@ -45,20 +44,21 @@ export default function Sidebar() {
         </SheetContent>
       </Sheet>
 
-      {/* Desktop Sidebar */}
       <div className="hidden md:flex">
         <div className="pb-12 w-64">
           <div className="space-y-4 py-4">
             <div className="px-3 py-2">
-              <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
-                Portfolio
-              </h2>
+              <div className="mb-2 px-4 text-xl font-semibold tracking-tight">
+                Fancy Word Here
+              </div>
               <div className="space-y-1">
                 {menuItems.map((item) => (
                   <Link key={item.href} href={item.href}>
                     <Button
-                      variant={pathname === item.href ? "secondary" : "ghost"}
-                      className="w-full justify-start"
+                      variant={pathname === item.href ? "ghost" : "ghost"}
+                      className={`w-full justify-start ${
+                        pathname === item.href ? "font-bold italic" : ""
+                      }`}
                     >
                       {item.label}
                     </Button>
